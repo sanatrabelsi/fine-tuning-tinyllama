@@ -1,0 +1,354 @@
+[
+    {
+      "System": "Vous êtes un assistant compétent en développement et test de logiciels..",
+      "Prompt": "En tant qu'utilisateur, je veux pouvoir me connecter à mon compte, afin de pouvoir accéder à mes données personnelles. Génère des cas de test pour cette user story.",
+      "Response": [
+        {
+          "Cas de Test": "1",
+          "Objectif": "Vérifier que l'utilisateur peut se connecter avec des identifiants valides.",
+          "Préconditions": "L'utilisateur a un compte valide avec un nom d'utilisateur et un mot de passe corrects.",
+          "Étapes": [
+            "Accédez à la page de connexion.",
+            "Entrez un nom d'utilisateur valide.",
+            "Entrez un mot de passe valide.",
+            "Cliquez sur le bouton 'Se connecter'."
+          ],
+          "Résultat Attendu": "L'utilisateur est redirigé vers la page d'accueil ou le tableau de bord de l'application."
+        },
+        {
+          "Cas de Test": "2",
+          "Objectif": "Vérifier que la connexion échoue avec un nom d'utilisateur invalide.",
+          "Préconditions": "L'utilisateur entre un nom d'utilisateur incorrect.",
+          "Étapes": [
+            "Accédez à la page de connexion.",
+            "Entrez un nom d'utilisateur invalide.",
+            "Entrez un mot de passe valide.",
+            "Cliquez sur le bouton 'Se connecter'."
+          ],
+          "Résultat Attendu": "Un message d'erreur indique que le nom d'utilisateur est incorrect."
+        },
+        {
+          "Cas de Test": "3",
+          "Objectif": "Vérifier que la connexion échoue avec un mot de passe invalide.",
+          "Préconditions": "L'utilisateur entre un mot de passe incorrect pour un nom d'utilisateur valide.",
+          "Étapes": [
+            "Accédez à la page de connexion.",
+            "Entrez un nom d'utilisateur valide.",
+            "Entrez un mot de passe invalide.",
+            "Cliquez sur le bouton 'Se connecter'."
+          ],
+          "Résultat Attendu": "Un message d'erreur indique que le mot de passe est incorrect."
+        },
+        {
+          "Cas de Test": "4",
+          "Objectif": "Vérifier que la connexion échoue si les champs de connexion sont vides.",
+          "Préconditions": "Aucun champ n'est rempli.",
+          "Étapes": [
+            "Accédez à la page de connexion.",
+            "Laissez les champs nom d'utilisateur et mot de passe vides.",
+            "Cliquez sur le bouton 'Se connecter'."
+          ],
+          "Résultat Attendu": "Un message d'erreur indique que les champs doivent être remplis."
+        },
+        {
+          "Cas de Test": "5",
+          "Objectif": "Vérifier que la connexion fonctionne avec des caractères spéciaux dans le nom d'utilisateur.",
+          "Préconditions": "L'utilisateur a un compte avec des caractères spéciaux dans le nom d'utilisateur.",
+          "Étapes": [
+            "Accédez à la page de connexion.",
+            "Entrez un nom d'utilisateur contenant des caractères spéciaux.",
+            "Entrez un mot de passe valide.",
+            "Cliquez sur le bouton 'Se connecter'."
+          ],
+          "Résultat Attendu": "L'utilisateur est redirigé vers la page d'accueil ou le tableau de bord de l'application."
+        },
+        {
+          "Cas de Test": "6",
+          "Objectif": "Vérifier que l'utilisateur peut se connecter après avoir réinitialisé son mot de passe.",
+          "Préconditions": "L'utilisateur a réinitialisé son mot de passe avec succès.",
+          "Étapes": [
+            "Accédez à la page de connexion.",
+            "Entrez le nom d'utilisateur valide.",
+            "Entrez le nouveau mot de passe.",
+            "Cliquez sur le bouton 'Se connecter'."
+          ],
+          "Résultat Attendu": "L'utilisateur est redirigé vers la page d'accueil ou le tableau de bord de l'application."
+        },
+        {
+          "Cas de Test": "7",
+          "Objectif": "Vérifier que l'utilisateur peut se déconnecter correctement après connexion.",
+          "Préconditions": "L'utilisateur est connecté.",
+          "Étapes": [
+            "Accédez à la page d'accueil ou tableau de bord après connexion.",
+            "Cliquez sur le bouton 'Déconnexion'."
+          ],
+          "Résultat Attendu": "L'utilisateur est redirigé vers la page de connexion, et un message de confirmation de déconnexion est affiché."
+        }
+      ]
+    },
+    {
+      "System": "Vous êtes un assistant compétent en développement et test de logiciels..",
+      "Prompt": "En tant qu'administrateur, je veux pouvoir ajouter de nouveaux utilisateurs à l'application, afin de permettre à plus de personnes d'utiliser l'application. Génère des cas de test pour cette user story.",
+      "Response": [
+        {
+          "Cas de Test": "1",
+          "Objectif": "Vérifier que l'administrateur peut ajouter un nouvel utilisateur avec des informations valides.",
+          "Préconditions": "L'administrateur est connecté à l'application et a accès à la fonctionnalité d'ajout d'utilisateur.",
+          "Étapes": [
+            "Accédez à la section de gestion des utilisateurs.",
+            "Cliquez sur le bouton 'Ajouter un nouvel utilisateur'.",
+            "Entrez un nom d'utilisateur valide.",
+            "Entrez une adresse e-mail valide.",
+            "Entrez un mot de passe valide.",
+            "Cliquez sur 'Enregistrer' ou 'Ajouter'."
+          ],
+          "Résultat Attendu": "Le nouvel utilisateur est ajouté avec succès, et un message de confirmation est affiché."
+        },
+        {
+          "Cas de Test": "2",
+          "Objectif": "Vérifier que l'ajout d'un utilisateur échoue si le nom d'utilisateur est déjà pris.",
+          "Préconditions": "Un utilisateur avec le même nom d'utilisateur existe déjà.",
+          "Étapes": [
+            "Accédez à la section de gestion des utilisateurs.",
+            "Cliquez sur le bouton 'Ajouter un nouvel utilisateur'.",
+            "Entrez un nom d'utilisateur qui existe déjà.",
+            "Entrez une adresse e-mail valide.",
+            "Entrez un mot de passe valide.",
+            "Cliquez sur 'Enregistrer' ou 'Ajouter'."
+          ],
+          "Résultat Attendu": "Un message d'erreur indique que le nom d'utilisateur est déjà pris."
+        },
+        {
+          "Cas de Test": "3",
+          "Objectif": "Vérifier que l'ajout d'un utilisateur échoue si l'adresse e-mail est invalide.",
+          "Préconditions": "L'adresse e-mail fournie est incorrecte.",
+          "Étapes": [
+            "Accédez à la section de gestion des utilisateurs.",
+            "Cliquez sur le bouton 'Ajouter un nouvel utilisateur'.",
+            "Entrez un nom d'utilisateur valide.",
+            "Entrez une adresse e-mail invalide (par exemple, sans le caractère @).",
+            "Entrez un mot de passe valide.",
+            "Cliquez sur 'Enregistrer' ou 'Ajouter'."
+          ],
+          "Résultat Attendu": "Un message d'erreur indique que l'adresse e-mail est invalide."
+        },
+        {
+          "Cas de Test": "4",
+          "Objectif": "Vérifier que l'ajout d'un utilisateur échoue si le mot de passe ne respecte pas les critères de sécurité (trop court).",
+          "Préconditions": "Le mot de passe ne respecte pas les exigences minimales (par exemple, moins de 6 caractères).",
+          "Étapes": [
+            "Accédez à la section de gestion des utilisateurs.",
+            "Cliquez sur le bouton 'Ajouter un nouvel utilisateur'.",
+            "Entrez un nom d'utilisateur valide.",
+            "Entrez une adresse e-mail valide.",
+            "Entrez un mot de passe trop court.",
+            "Cliquez sur 'Enregistrer' ou 'Ajouter'."
+          ],
+          "Résultat Attendu": "Un message d'erreur indique que le mot de passe est trop court."
+        },
+        {
+          "Cas de Test": "5",
+          "Objectif": "Vérifier que l'ajout d'un utilisateur échoue si des champs obligatoires sont laissés vides.",
+          "Préconditions": "Des champs requis ne sont pas remplis.",
+          "Étapes": [
+            "Accédez à la section de gestion des utilisateurs.",
+            "Cliquez sur le bouton 'Ajouter un nouvel utilisateur'.",
+            "Laissez les champs nom d'utilisateur, adresse e-mail ou mot de passe vides.",
+            "Cliquez sur 'Enregistrer' ou 'Ajouter'."
+          ],
+          "Résultat Attendu": "Un message d'erreur indique que les champs requis doivent être remplis."
+        },
+        {
+          "Cas de Test": "6",
+          "Objectif": "Vérifier que l'ajout d'un utilisateur échoue si des informations manquantes ou incorrectes sont fournies.",
+          "Préconditions": "Certaines informations sont incorrectes ou incomplètes.",
+          "Étapes": [
+            "Accédez à la section de gestion des utilisateurs.",
+            "Cliquez sur le bouton 'Ajouter un nouvel utilisateur'.",
+            "Entrez des informations incorrectes (par exemple, un nom d'utilisateur avec des caractères non autorisés).",
+            "Cliquez sur 'Enregistrer' ou 'Ajouter'."
+          ],
+          "Résultat Attendu": "Un message d'erreur indique que les informations fournies sont incorrectes ou incomplètes."
+        }
+      ]
+    },
+    {
+      "System": "Vous êtes un assistant compétent en développement et test de logiciels..",
+      "Prompt": "En tant que client, je veux pouvoir filtrer les produits par catégorie, afin de trouver plus facilement ce que je cherche. Génère des cas de test pour cette user story.",
+      "Response": [
+        {
+          "Cas de Test": "1",
+          "Objectif": "Vérifier que les produits sont correctement filtrés lorsqu'une catégorie valide est sélectionnée.",
+          "Préconditions": "La liste des produits contient plusieurs catégories.",
+          "Étapes": [
+            "Accédez à la page des produits.",
+            "Sélectionnez une catégorie valide depuis le menu de filtrage.",
+            "Cliquez sur le bouton 'Filtrer' ou 'Appliquer'."
+          ],
+          "Résultat Attendu": "La liste des produits est mise à jour pour afficher uniquement les produits de la catégorie sélectionnée."
+        },
+        {
+          "Cas de Test": "2",
+          "Objectif": "Vérifier que le filtrage ne retourne aucun produit si une catégorie invalide est sélectionnée.",
+          "Préconditions": "La catégorie sélectionnée n'existe pas.",
+          "Étapes": [
+            "Accédez à la page des produits.",
+            "Sélectionnez une catégorie invalide depuis le menu de filtrage.",
+            "Cliquez sur le bouton 'Filtrer' ou 'Appliquer'."
+          ],
+          "Résultat Attendu": "Aucun produit n'est affiché, et un message indiquant qu'aucun produit ne correspond à la catégorie est affiché."
+        },
+        {
+          "Cas de Test": "3",
+          "Objectif": "Vérifier que le filtrage par catégorie fonctionne correctement avec des sous-catégories.",
+          "Préconditions": "Les produits sont organisés en sous-catégories.",
+          "Étapes": [
+            "Accédez à la page des produits.",
+            "Sélectionnez une sous-catégorie depuis le menu de filtrage.",
+            "Cliquez sur le bouton 'Filtrer' ou 'Appliquer'."
+          ],
+          "Résultat Attendu": "La liste des produits est mise à jour pour afficher uniquement les produits de la sous-catégorie sélectionnée."
+        },
+        {
+          "Cas de Test": "4",
+          "Objectif": "Vérifier que le filtre de catégorie fonctionne correctement avec des produits multiples dans une même catégorie.",
+          "Préconditions": "Il y a plusieurs produits dans la même catégorie.",
+          "Étapes": [
+            "Accédez à la page des produits.",
+            "Sélectionnez une catégorie contenant plusieurs produits.",
+            "Cliquez sur le bouton 'Filtrer' ou 'Appliquer'."
+          ],
+          "Résultat Attendu": "Tous les produits de la catégorie sélectionnée sont affichés."
+        },
+        {
+          "Cas de Test": "5",
+          "Objectif": "Vérifier que le filtrage fonctionne correctement lorsque plusieurs catégories sont sélectionnées en même temps.",
+          "Préconditions": "Il y a des produits dans chaque catégorie sélectionnée.",
+          "Étapes": [
+            "Accédez à la page des produits.",
+            "Sélectionnez plusieurs catégories depuis le menu de filtrage.",
+            "Cliquez sur le bouton 'Filtrer' ou 'Appliquer'."
+          ],
+          "Résultat Attendu": "La liste des produits est mise à jour pour afficher les produits appartenant à toutes les catégories sélectionnées."
+        }
+      ]
+    },
+    {
+      "System": "Vous êtes un assistant compétent en développement et test de logiciels..",
+      "Prompt": "En tant qu'utilisateur, je veux recevoir une notification lorsque je reçois un message, afin de ne pas manquer des communications importantes. Génère des cas de test pour cette user story.",
+      "Response": [
+        {
+          "Cas de Test": "1",
+          "Objectif": "Vérifier que l'utilisateur reçoit une notification pour un nouveau message.",
+          "Préconditions": "L'utilisateur est connecté à l'application et a activé les notifications.",
+          "Étapes": [
+            "Envoyez un message à l'utilisateur.",
+            "Vérifiez que l'utilisateur reçoit une notification pour ce message."
+          ],
+          "Résultat Attendu": "L'utilisateur reçoit une notification sur l'application ou par e-mail, selon les paramètres de notification."
+        },
+        {
+          "Cas de Test": "2",
+          "Objectif": "Vérifier que l'utilisateur ne reçoit pas de notification si les notifications sont désactivées.",
+          "Préconditions": "L'utilisateur a désactivé les notifications dans les paramètres.",
+          "Étapes": [
+            "Envoyez un message à l'utilisateur.",
+            "Vérifiez que l'utilisateur ne reçoit pas de notification."
+          ],
+          "Résultat Attendu": "L'utilisateur ne reçoit pas de notification pour le message envoyé."
+        },
+        {
+          "Cas de Test": "3",
+          "Objectif": "Vérifier que les notifications sont envoyées avec le contenu correct du message.",
+          "Préconditions": "L'utilisateur reçoit un message avec un contenu spécifique.",
+          "Étapes": [
+            "Envoyez un message à l'utilisateur avec un contenu précis.",
+            "Vérifiez que la notification affiche le contenu correct du message."
+          ],
+          "Résultat Attendu": "La notification contient le contenu exact du message reçu par l'utilisateur."
+        },
+        {
+          "Cas de Test": "4",
+          "Objectif": "Vérifier que les notifications ne sont pas envoyées pour les messages supprimés avant la réception.",
+          "Préconditions": "Un message est envoyé mais supprimé avant que l'utilisateur ne le reçoive.",
+          "Étapes": [
+            "Envoyez un message à l'utilisateur.",
+            "Supprimez le message avant que l'utilisateur puisse le lire.",
+            "Vérifiez si l'utilisateur reçoit une notification."
+          ],
+          "Résultat Attendu": "L'utilisateur ne reçoit pas de notification pour le message supprimé."
+        },
+        {
+          "Cas de Test": "5",
+          "Objectif": "Vérifier que les notifications sont envoyées avec le bon niveau de priorité.",
+          "Préconditions": "Les messages ont des niveaux de priorité différents.",
+          "Étapes": [
+            "Envoyez des messages avec différents niveaux de priorité à l'utilisateur.",
+            "Vérifiez que les notifications reflètent correctement ces niveaux de priorité."
+          ],
+          "Résultat Attendu": "Les notifications reflètent les niveaux de priorité des messages envoyés."
+        }
+      ]
+    },
+    {
+      "System": "Vous êtes un assistant compétent en développement et test de logiciels..",
+      "Prompt": "En tant qu'employé, je veux pouvoir consulter mon emploi du temps en ligne, afin de planifier mes journées efficacement. Génère des cas de test pour cette user story.",
+      "Response": [
+        {
+          "Cas de Test": "1",
+          "Objectif": "Vérifier que l'employé peut consulter son emploi du temps en ligne avec des informations valides.",
+          "Préconditions": "L'employé est connecté à l'application avec un compte valide.",
+          "Étapes": [
+            "Accédez à la page de consultation de l'emploi du temps.",
+            "Vérifiez que l'emploi du temps de l'employé est affiché correctement."
+          ],
+          "Résultat Attendu": "L'emploi du temps de l'employé est affiché avec toutes les tâches, rendez-vous et horaires correctement renseignés."
+        },
+        {
+          "Cas de Test": "2",
+          "Objectif": "Vérifier que l'affichage de l'emploi du temps est correct pour une période donnée.",
+          "Préconditions": "L'employé sélectionne une période spécifique.",
+          "Étapes": [
+            "Accédez à la page de consultation de l'emploi du temps.",
+            "Sélectionnez une période spécifique (par exemple, une semaine ou un mois).",
+            "Vérifiez que l'emploi du temps est affiché pour la période sélectionnée."
+          ],
+          "Résultat Attendu": "L'emploi du temps affiché correspond à la période sélectionnée."
+        },
+        {
+          "Cas de Test": "3",
+          "Objectif": "Vérifier que les modifications apportées à l'emploi du temps sont correctement enregistrées et affichées.",
+          "Préconditions": "L'employé a les permissions nécessaires pour modifier l'emploi du temps.",
+          "Étapes": [
+            "Accédez à la page de consultation de l'emploi du temps.",
+            "Modifiez les tâches ou rendez-vous.",
+            "Enregistrez les modifications.",
+            "Vérifiez que les modifications sont affichées correctement."
+          ],
+          "Résultat Attendu": "Les modifications apportées à l'emploi du temps sont correctement enregistrées et affichées."
+        },
+        {
+          "Cas de Test": "4",
+          "Objectif": "Vérifier que les erreurs d'affichage sont gérées correctement lorsqu'aucune tâche ou rendez-vous n'est programmé.",
+          "Préconditions": "L'emploi du temps est vide pour la période sélectionnée.",
+          "Étapes": [
+            "Accédez à la page de consultation de l'emploi du temps.",
+            "Sélectionnez une période sans tâches ou rendez-vous.",
+            "Vérifiez l'affichage."
+          ],
+          "Résultat Attendu": "Un message indiquant qu'aucune tâche ou rendez-vous n'est programmé est affiché."
+        },
+        {
+          "Cas de Test": "5",
+          "Objectif": "Vérifier que les tâches et rendez-vous récurrents sont correctement affichés.",
+          "Préconditions": "Des tâches ou rendez-vous récurrents sont programmés dans l'emploi du temps.",
+          "Étapes": [
+            "Accédez à la page de consultation de l'emploi du temps.",
+            "Vérifiez les tâches et rendez-vous récurrents pour une période donnée."
+          ],
+          "Résultat Attendu": "Les tâches et rendez-vous récurrents sont correctement affichés pour chaque occurrence prévue."
+        }
+      ]
+    }
+  ]
+  
